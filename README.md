@@ -1,4 +1,4 @@
-# Angular E‑Commerce App
+# E‑Commerce App (Angular)
 
 A simple Angular 16.2 e‑commerce demo with authentication (signin/signup), forgot/reset password flow, protected routes, profile page, and feedback form.
 
