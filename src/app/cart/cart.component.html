@@ -1,0 +1,36 @@
+<div class="container my-4">
+  <div class="row mb-4 align-items-center cart-header">
+    <div class="col-md-6">
+      <h4 class="fw-bold text-main">Total: <span class="text-success">{{cartTotalPrice}} EGP</span></h4>
+    </div>
+    <div class="col-md-6 text-md-end">
+      <span class="badge bg-success p-2 fs-6">Items: {{numberOfCartItems}}</span>
+    </div>
+  </div>
+
+  <div class="row g-3 cart-item shadow-sm rounded-3 p-3 mb-3" *ngFor="let item of cartData">
+    <div class="col-md-2 cart-image">
+      <img [src]="item.product.imageCover" alt="product" class="img-fluid rounded">
+    </div>
+    <div class="col-md-8">
+      <h5 class="text-main fw-bold">{{item.product.title}}</h5>
+      <p class="mb-2 text-muted">Price: <span class="fw-bold">{{item.price}} EGP</span></p>
+      <div class="d-flex justify-content-between align-items-center">
+        <button (click)="removeItem(item.product._id)" class="btn btn-outline-danger btn-sm">
+          <i class="fa-solid fa-trash-can me-1"></i> Remove
+        </button>
+        <div class="quantity-controls d-flex align-items-center">
+          <button (click)="updateCount(item.product._id,item.count-1)" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-minus"></i></button>
+          <span class="mx-2 fw-bold">{{item.count}}</span>
+          <button (click)="updateCount(item.product._id,item.count+1)" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <button [routerLink]="['/checkOut',data._id]" class="btn btn-main btn-lg px-5 text-white">
+      Proceed to Checkout
+    </button>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+.category-card {
+  width: 150px;
+  height: 180px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+  }
+
+  .category-img {
+    width: 100%;
+    height: 100px;        /* fixed height for all */
+    object-fit: contain;    /* crop & fill the container */
+    object-position: center center;  /* center the image */
+    border-radius: 4px;
+  }
+
+  .category-name {
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+/* SIDE IMAGES */
+.side-img {
+  width: 100%;
+  height: 200px;
+  object-fit: fill;
+  object-position: center center;    /* maintain aspect ratio */
+  display: block;
+}

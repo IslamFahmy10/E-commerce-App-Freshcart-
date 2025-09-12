@@ -1,0 +1,18 @@
+<div class="card mx-auto p-4" style="max-width: 500px;">
+  <h4>Account Information</h4>
+  <p><b>Email:</b> {{user.email}}</p>
+  <p><b>Username:</b> {{user.username}}</p>
+
+  <hr>
+  <h5>Reset Password</h5>
+  <form (submit)="requestResetCode()">
+    <input type="email" [(ngModel)]="resetEmail" placeholder="Enter your email" name="email" required class="form-control mb-2">
+    <button class="btn btn-success w-100" type="submit">Request Reset Code</button>
+  </form>
+
+  <form *ngIf="codeSent" (submit)="verifyAndUpdatePassword()">
+    <input type="text" [(ngModel)]="resetCode" placeholder="Enter verification code" name="code" required class="form-control mb-2">
+    <input type="password" [(ngModel)]="newPassword" placeholder="New Password" name="newPassword" required class="form-control mb-2">
+    <button class="btn btn-primary w-100" type="submit">Update Password</button>
+  </form>
+</div>

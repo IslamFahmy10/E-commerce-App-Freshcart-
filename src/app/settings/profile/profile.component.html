@@ -1,0 +1,11 @@
+<div class="profile-card mx-auto p-4 text-center" style="max-width: 400px;">
+  <img src="./assets/images/profile.jpg" class="rounded-circle mb-3" width="120" height="120" alt="avatar">
+  <h4>{{user.username}}</h4>
+  <p><b>Cart Items:</b> {{cartItems}}</p>
+  <p><b>Purchases:</b> {{purchases}}</p>
+
+  <hr>
+  <h5>Feedback</h5>
+  <textarea [(ngModel)]="feedback" class="form-control mb-2" placeholder="Leave your feedback"></textarea>
+  <button class="btn btn-success w-100" (click)="submitFeedback()">Submit Feedback</button>
+</div>

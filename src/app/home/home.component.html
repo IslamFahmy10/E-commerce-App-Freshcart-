@@ -1,0 +1,27 @@
+<section class="py-3 container-fluid">
+  <div class="row g-0">
+    <!-- Main slider -->
+    <div class="col-md-9">
+      <owl-carousel-o [options]="homeSliderOption">
+        <ng-template carouselSlide>
+          <img height="400" src="./assets/images/slider-image-1.jpeg" alt="main slide 1" />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img height="400" src="./assets/images/slider-image-2.jpeg" alt="main slide 2" />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img height="400" src="./assets/images/slider-image-3.jpeg" alt="main slide 3" />
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+
+    <!-- Side images -->
+    <div class="col-md-3 d-flex flex-column ">
+      <img src="./assets/images/side2.jpeg" class="w-100 side-img" alt="side1"/>
+      <img src="./assets/images/slider-2.jpeg" class="w-100 side-img" alt="side2"/>
+    </div>
+  </div>
+</section>
+
+<!-- Popular Categories -->
+<section class="mx-auto"> <div class="container my-3"> <h4 class="fw-bold my-5 text-success">Popular Categories</h4> <owl-carousel-o [options]="categoriesOptions"> <ng-container *ngFor="let cat of allCategories"> <ng-template carouselSlide> <div class="category-card text-center p-2"> <img [src]="cat.image" class="img-fluid mb-2 category-img" [alt]="cat.name" alt="categoryImage"/> <h6 class="category-name text-success">{{cat.name}}</h6> </div> </ng-template> </ng-container> </owl-carousel-o> </div> </section> <div class="container my-4" *ngIf="allProducts.length > 0"> <h4 class="fw-bold my-3 text-success" >Popular Products</h4> <input [(ngModel)]="term" type="search" class="form-control mx-auto m-3 w-75 rounded-pill border-success" placeholder="look for what??" label="" title="search"> <h6>{{term}}</h6> <div class="row g-3 px-3" > <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 product p-3 m-3 overflow-hidden shadow rounded-2" *ngFor="let item of allProducts|search:term|slice:0:10"> <div [routerLink]='["/productDetails" ,item._id ]'> <img [src]='item.imageCover' class="w-100" alt="details of the product "> <span class="text-main fw-bold">{{item.category.name}}</span> <h6>{{item.title|seemore:2}}</h6> <div class="w-100 d-flex justify-content-between m-2"> <span>{{item.price}} EGP</span> <span>{{item.ratingsAverage}}<i class="fa-solid fa-star rating-color" ></i></span> </div> </div> <button (click)="addToMyCart(item._id)" class="btn bg-main text-white w-100">+ Add</button> </div> </div> </div>

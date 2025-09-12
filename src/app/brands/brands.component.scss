@@ -1,0 +1,52 @@
+.brand-card {
+  cursor: pointer;
+  background: #fff;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .brand-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #28a745;
+  }
+}
+
+.empty-brands {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+
+  h3 {
+    font-size: 2rem;
+    color: #28a745;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  i {
+    color: #28a745;
+  }
+}

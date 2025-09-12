@@ -1,0 +1,21 @@
+.empty-category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+
+  h3 {
+    font-size: 2rem;  // large heading
+    color: #28a745;   // green theme
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  i {
+    color: #28a745;   // green icon
+  }
+}

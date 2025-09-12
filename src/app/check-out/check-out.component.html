@@ -1,0 +1,17 @@
+<section class="p-3 m-3 ">
+  <form class="form-control" [formGroup]="shippingAddress" (ngSubmit)="payNow(shippingAddress)">
+  <label for="details">
+  Details
+  </label>
+<input class="form-control" formControlName="details" type="text" id="details">
+<label for="city">
+  City
+  </label>
+<input class="form-control" formControlName="city" type="text" id="city">
+<label for="phone">
+  Phone
+  </label>
+<input class="form-control" formControlName="phone" type="text" id="phone" placeholder="EX:010*****">
+<button class="btn bg-main m-2 w-25" type="submit">Pay</button>
+</form>
+</section>

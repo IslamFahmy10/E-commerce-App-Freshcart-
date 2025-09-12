@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="w-75 mx-auto py-5">
+    <form [formGroup]="loginForm">
+      <div>
+        <div class="alert alert-danger" *ngIf="loginError">{{loginError}}</div>
+        <label for="email">E-mail</label>
+        <input formControlName="email" class="form-control" type="email" id="email">
+        <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="alert alert-danger">
+          <p *ngIf="loginForm.get('email')?.getError('required')">Email is required</p>
+          <p *ngIf="loginForm.get('email')?.getError('email')">Ex : username@example</p>
+        </div>
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input formControlName="password" class="form-control" type="password" id="password">
+        <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched" class="alert alert-danger">
+          <p *ngIf="loginForm.get('password')?.getError('pattern')">
+            Password must start with uppercase, more than 7 chars
+          </p>
+          <p *ngIf="loginForm.get('password')?.getError('required')">Password is required</p>
+        </div>
+      </div>
+
+      <button *ngIf="isLoading==false" [disabled]="loginForm.invalid" type="button" (click)="getData(loginForm)"
+        title="login" class="btn bg-main text-white my-3">Sign In</button>
+      <button type="button" *ngIf="isLoading==true" class="btn bg-main text-white" title="loading">
+        <i class="fa-spinner fa-solid fa-spin"></i>
+      </button>
+
+      <!-- Forgot Password Button -->
+      <button type="button" class="btn btn-link mt-2" (click)="goToForgotPassword()">Forgot Password?</button>
+    </form>
+  </div>
+</div>

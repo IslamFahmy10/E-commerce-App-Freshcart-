@@ -1,3 +1,42 @@
+# Angular E‑Commerce App
+
+A simple Angular 16.2 e‑commerce demo with authentication (signin/signup), forgot/reset password flow, protected routes, profile page, and feedback form.
+
+## Features
+
+* Login / Signup (JWT token)
+* products viewing and pagination with multi categories and brands
+* Forgot password flow (request reset code, verify code, reset password)
+* Protected routes using `authGuard`
+* Profile page showing decoded username from token
+* Feedback form with toast notifications
+* HTTP services using `HttpClient`
+
+## Tech stack
+
+* Angular 16.2
+* RxJS
+* Angular Forms (Reactive + Template-driven)
+* `@angular/common/http` (HttpClient)
+* `ngx-toastr`
+* Bootstrap (or other CSS framework)
+
+## Setup & Run Locally
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run development server:
+
+```bash
+ng serve --open
+```
+
+Project will run at `http://localhost:4200`
+
 # MyProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
