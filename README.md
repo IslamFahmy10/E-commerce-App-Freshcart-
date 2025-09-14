@@ -1,7 +1,7 @@
 # E‑Commerce App (Angular)
 
 A simple Angular 16.2 e‑commerce demo with authentication (signin/signup), forgot/reset password flow, protected routes, profile page, and feedback form.
-[![View Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://e-commerce-app-fresh.netlify.app/login)
+[![View Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://e-commerce-app-fresh.netlify.app/)
 
 
 * Login / Signup (JWT token)
